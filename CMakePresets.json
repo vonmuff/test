@@ -1,0 +1,266 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "_clang",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "_clang-cl",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang-cl",
+                "CMAKE_CXX_COMPILER": "clang-cl",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "_gnu",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "_debug",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/debug",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "_realese",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/realese",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "_coverage",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/coverage",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Coverage"
+            }
+        },
+        {
+            "name": "_vcpkg",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "_conan",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/conan_toolchain.cmake",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "windows-static-realese",
+            "inherits": [
+                "_realese"
+            ],
+            "cacheVariables": {
+                "BUILD_SHARED_LIBS": "OFF",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded",
+                "CMAKE_EXE_LINKER_FLAGS": "/INCREMENTAL:NO",
+                "VCPKG_TARGET_TRIPLET": "x64-windows-static"
+            }
+        },
+        {
+            "name": "clang-debug-vcpkg",
+            "displayName": "Clang Debug Vcpkg",
+            "description": "Compiler: clang | build type: Debug | package: vcpkg",
+            "inherits": [
+                "_clang",
+                "_debug",
+                "_vcpkg"
+            ]
+        },
+        {
+            "name": "clang-realese-vcpkg",
+            "displayName": "Clang Realese Vcpkg",
+            "description": "Compiler: clang | build type: Realese | package: vcpkg",
+            "inherits": [
+                "_clang",
+                "_realese",
+                "_vcpkg"
+            ]
+        },
+        {
+            "name": "clang-coverage-vcpkg",
+            "displayName": "Clang Coverage Vcpkg",
+            "description": "Compiler: clang | build type: Coverage | package: vcpkg",
+            "inherits": [
+                "_clang",
+                "_coverage",
+                "_vcpkg"
+            ]
+        },
+        {
+            "name": "clang-cl-coverage-vcpkg",
+            "displayName": "Clang-cl Coverage Vcpkg",
+            "description": "Compiler: clang-cl | build type: Coverage | package: vcpkg",
+            "inherits": [
+                "_clang-cl",
+                "_coverage",
+                "_vcpkg"
+            ]
+        },
+        {
+            "name": "gnu-coverage-vcpkg",
+            "displayName": "Gnu Coverage Vcpkg",
+            "description": "Compiler: gnu | build type: Coverage | package: vcpkg",
+            "inherits": [
+                "_gnu",
+                "_coverage",
+                "_vcpkg"
+            ]
+        },
+        {
+            "name": "clang-conan",
+            "inherits": [
+                "_clang",
+                "_conan"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "clang-debug-vcpkg",
+            "displayName": "Clang Debug Vcpkg",
+            "configurePreset": "clang-debug-vcpkg"
+        },
+        {
+            "name": "clang-realese-vcpkg",
+            "displayName": "Clang Realese Vcpkg",
+            "configurePreset": "clang-realese-vcpkg"
+        },
+        {
+            "name": "clang-coverage-vcpkg",
+            "configurePreset": "clang-coverage-vcpkg"
+        },
+        {
+            "name": "clang-cl-coverage-vcpkg",
+            "configurePreset": "clang-cl-coverage-vcpkg"
+        },
+        {
+            "name": "gnu-coverage-vcpkg",
+            "configurePreset": "gnu-coverage-vcpkg"
+        },
+        {
+            "name": "clang-conan",
+            "configurePreset": "clang-conan"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "_default",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "jobs": 8
+            }
+        },
+        {
+            "name": "_app-test",
+            "hidden": true,
+            "filter": {
+                "include": {
+                    "label": "app"
+                }
+            }
+        },
+        {
+            "name": "_library-test",
+            "hidden": true,
+            "filter": {
+                "include": {
+                    "label": "library"
+                }
+            }
+        },
+        {
+            "name": "clang-debug-vcpkg",
+            "configurePreset": "clang-debug-vcpkg",
+            "inherits": [
+                "_default",
+                "_app-test",
+                "_library-test"
+            ]
+        },
+        {
+            "name": "clang-realese-vcpkg",
+            "configurePreset": "clang-realese-vcpkg",
+            "inherits": [
+                "_default",
+                "_app-test",
+                "_library-test"
+            ]
+        },
+        {
+            "name": "clang-coverage-vcpkg",
+            "configurePreset": "clang-coverage-vcpkg",
+            "inherits": [
+                "_default",
+                "_app-test",
+                "_library-test"
+            ]
+        },
+        {
+            "name": "gnu-coverage-vcpkg",
+            "configurePreset": "gnu-coverage-vcpkg",
+            "inherits": [
+                "_default",
+                "_app-test",
+                "_library-test"
+            ]
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "greeter",
+            "configurePreset": "clang-realese-vcpkg",
+            "description": "The Greeter Library"
+        },
+        {
+            "name": "dev-zip",
+            "displayName": "Developer Archive ZIP",
+            "inherits": "greeter",
+            "generators": [
+                "ZIP"
+            ],
+            "variables": {
+                "CPACK_COMPONENTS_ALL": "Development"
+            }
+        },
+        {
+            "name": "windows-release-installer",
+            "displayName": "Windows Installer (MSI)",
+            "inherits": "greeter",
+            "generators": [
+                "WIX"
+            ],
+            "variables": {
+                "CPACK_COMPONENTS_ALL": "Application"
+            }
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+[
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -IC:/Users/user/Desktop/greeter/app/include -IC:/Users/user/Desktop/greeter/lib/include -isystem C:/Users/user/Desktop/greeter/build/debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o app\\CMakeFiles\\GreeterAppLogic.dir\\source\\run.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\app\\source\\run.cpp",
+  "file": "C:/Users/user/Desktop/greeter/app/source/run.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/app/CMakeFiles/GreeterAppLogic.dir/source/run.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -IC:/Users/user/Desktop/greeter/app/include -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o app\\CMakeFiles\\GreeterApp.dir\\source\\main.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\app\\source\\main.cpp",
+  "file": "C:/Users/user/Desktop/greeter/app/source/main.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/app/CMakeFiles/GreeterApp.dir/source/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -IC:/Users/user/Desktop/greeter/lib/include -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o lib\\CMakeFiles\\GreeterLib.dir\\source\\GreeterLib.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\lib\\source\\GreeterLib.cpp",
+  "file": "C:/Users/user/Desktop/greeter/lib/source/GreeterLib.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/lib/CMakeFiles/GreeterLib.dir/source/GreeterLib.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -IC:/Users/user/Desktop/greeter/lib/include -isystem C:/Users/user/Desktop/greeter/build/debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o test\\GreeterLib\\CMakeFiles\\TestGreeterLib.dir\\test_GreeterLib.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\test\\GreeterLib\\test_GreeterLib.cpp",
+  "file": "C:/Users/user/Desktop/greeter/test/GreeterLib/test_GreeterLib.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/test/GreeterLib/CMakeFiles/TestGreeterLib.dir/test_GreeterLib.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -IC:/Users/user/Desktop/greeter/app/include -isystem C:/Users/user/Desktop/greeter/build/debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o test\\GreeterApp\\CMakeFiles\\TestGreeterApp.dir\\test_GreeterApp.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\test\\GreeterApp\\test_GreeterApp.cpp",
+  "file": "C:/Users/user/Desktop/greeter/test/GreeterApp/test_GreeterApp.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/test/GreeterApp/CMakeFiles/TestGreeterApp.dir/test_GreeterApp.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -IC:/Users/user/Desktop/greeter/lib/include -isystem C:/Users/user/Desktop/greeter/build/debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o benchmark\\CMakeFiles\\GreeterBenchmark.dir\\benchmark.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\benchmark\\benchmark.cpp",
+  "file": "C:/Users/user/Desktop/greeter/benchmark/benchmark.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/benchmark/CMakeFiles/GreeterBenchmark.dir/benchmark.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -isystem C:/Users/user/Desktop/greeter/build/debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o benchmark\\CMakeFiles\\ContainerFindComplexityBenchmark.dir\\container_benchmark.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\benchmark\\container_benchmark.cpp",
+  "file": "C:/Users/user/Desktop/greeter/benchmark/container_benchmark.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/benchmark/CMakeFiles/ContainerFindComplexityBenchmark.dir/container_benchmark.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/Desktop/greeter/build/debug",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -isystem C:/Users/user/Desktop/greeter/build/debug/vcpkg_installed/x64-windows/include -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o benchmark\\CMakeFiles\\ThreadsBenchmark.dir\\threads_benchmark.cpp.obj -c C:\\Users\\user\\Desktop\\greeter\\benchmark\\threads_benchmark.cpp",
+  "file": "C:/Users/user/Desktop/greeter/benchmark/threads_benchmark.cpp",
+  "output": "C:/Users/user/Desktop/greeter/build/debug/benchmark/CMakeFiles/ThreadsBenchmark.dir/threads_benchmark.cpp.obj"
+}
+]

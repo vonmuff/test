@@ -1,0 +1,9 @@
+{
+  "name": "greeter",
+  "dependencies": [
+    "gtest",
+    "spdlog",
+    "benchmark"
+  ],
+  "builtin-baseline": "c756f54b9c1431080a54084f24cbf464579f675f"
+}

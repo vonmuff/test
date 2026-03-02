@@ -1,0 +1,51 @@
+name: C++ CI
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up vcpkg
+        uses: lukka/run-vcpkg@v11
+
+      - name: Configure CMake (Windows)
+        if: matrix.os == 'windows-latest'
+        run: cmake --preset windows-static-release
+      - name: Configure CMake (Linux/macOS)
+        if: matrix.os != 'windows-latest'
+        run: cmake --preset clang-realese-vcpkg
+
+      - name: Build project
+        run: cmake --build --preset clang-realese-vcpkg
+
+      - name: Run tests
+        run: ctest --preset clang-realese-vcpkg
+
+      - name: Package Development
+        run: cpack --preset dev-zip
+
+      - name: Upload Development Package Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Greeter-Development-${{ matrix.os }}
+          path: build/Greeter-*-Development.zip
+
+      - name: Package Application
+        if: matrix.os == 'windows-latest'
+        run: cpack --preset windows-release-installer
+
+      - name: Upload Application Package Artifact
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Greeter-Installer-${{ matrix.os }}
+          path: build/Greeter-*.msi

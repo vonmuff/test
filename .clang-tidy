@@ -1,0 +1,2 @@
+#Checks: '-*,modernize-use-nullptr,performance-avoid-endl,performance-*'
+#WarningsAsErrors: 'performance-unnecessary-value-param'
