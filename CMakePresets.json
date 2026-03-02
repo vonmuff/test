@@ -53,7 +53,7 @@
             "cacheVariables": {
                 "BUILD_SHARED_LIBS": "OFF",
                 "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded",
-                "CMAKE_EXE_LINKER_FLAGS": "/INCREMENTAL:NO",
+                "CMAKE_EXE_LINKER_FLAGS": "-Xlinker /INCREMENTAL:NO",
                 "VCPKG_TARGET_TRIPLET": "x64-windows-static"
             }
         },
