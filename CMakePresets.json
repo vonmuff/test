@@ -11,24 +11,6 @@
             }
         },
         {
-            "name": "_clang-cl",
-            "hidden": true,
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "clang-cl",
-                "CMAKE_CXX_COMPILER": "clang-cl",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
-        },
-        {
-            "name": "_gnu",
-            "hidden": true,
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "gcc",
-                "CMAKE_CXX_COMPILER": "g++",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
-        },
-        {
             "name": "_debug",
             "hidden": true,
             "binaryDir": "${sourceDir}/build/debug",
@@ -44,15 +26,6 @@
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
-            }
-        },
-        {
-            "name": "_coverage",
-            "hidden": true,
-            "binaryDir": "${sourceDir}/build/coverage",
-            "generator": "Ninja",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Coverage"
             }
         },
         {
