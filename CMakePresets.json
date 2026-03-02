@@ -71,9 +71,11 @@
             }
         },
         {
-            "name": "windows-static-realese",
+            "name": "windows-static-release",
             "inherits": [
-                "_realese"
+                "_clang",
+                "_realese",
+                "_vcpkg"
             ],
             "cacheVariables": {
                 "BUILD_SHARED_LIBS": "OFF",
@@ -113,6 +115,11 @@
             "name": "clang-realese-vcpkg",
             "displayName": "Clang Realese Vcpkg",
             "configurePreset": "clang-realese-vcpkg"
+        },
+        {
+            "name": "windows-static-release",
+            "displayName": "Windwos Static Release",
+            "configurePreset": "windows-static-release"
         }
     ],
     "testPresets": [
