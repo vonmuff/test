@@ -11,24 +11,6 @@
             }
         },
         {
-            "name": "_clang-cl",
-            "hidden": true,
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "clang-cl",
-                "CMAKE_CXX_COMPILER": "clang-cl",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
-        },
-        {
-            "name": "_gnu",
-            "hidden": true,
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "gcc",
-                "CMAKE_CXX_COMPILER": "g++",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
-        },
-        {
             "name": "_debug",
             "hidden": true,
             "binaryDir": "${sourceDir}/build/debug",
@@ -47,15 +29,6 @@
             }
         },
         {
-            "name": "_coverage",
-            "hidden": true,
-            "binaryDir": "${sourceDir}/build/coverage",
-            "generator": "Ninja",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Coverage"
-            }
-        },
-        {
             "name": "_vcpkg",
             "hidden": true,
             "cacheVariables": {
@@ -71,14 +44,16 @@
             }
         },
         {
-            "name": "windows-static-realese",
+            "name": "windows-static-release",
             "inherits": [
-                "_realese"
+                "_clang",
+                "_realese",
+                "_vcpkg"
             ],
             "cacheVariables": {
                 "BUILD_SHARED_LIBS": "OFF",
                 "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded",
-                "CMAKE_EXE_LINKER_FLAGS": "/INCREMENTAL:NO",
+                "CMAKE_EXE_LINKER_FLAGS": "-Xlinker /INCREMENTAL:NO",
                 "VCPKG_TARGET_TRIPLET": "x64-windows-static"
             }
         },
@@ -101,43 +76,6 @@
                 "_realese",
                 "_vcpkg"
             ]
-        },
-        {
-            "name": "clang-coverage-vcpkg",
-            "displayName": "Clang Coverage Vcpkg",
-            "description": "Compiler: clang | build type: Coverage | package: vcpkg",
-            "inherits": [
-                "_clang",
-                "_coverage",
-                "_vcpkg"
-            ]
-        },
-        {
-            "name": "clang-cl-coverage-vcpkg",
-            "displayName": "Clang-cl Coverage Vcpkg",
-            "description": "Compiler: clang-cl | build type: Coverage | package: vcpkg",
-            "inherits": [
-                "_clang-cl",
-                "_coverage",
-                "_vcpkg"
-            ]
-        },
-        {
-            "name": "gnu-coverage-vcpkg",
-            "displayName": "Gnu Coverage Vcpkg",
-            "description": "Compiler: gnu | build type: Coverage | package: vcpkg",
-            "inherits": [
-                "_gnu",
-                "_coverage",
-                "_vcpkg"
-            ]
-        },
-        {
-            "name": "clang-conan",
-            "inherits": [
-                "_clang",
-                "_conan"
-            ]
         }
     ],
     "buildPresets": [
@@ -152,20 +90,9 @@
             "configurePreset": "clang-realese-vcpkg"
         },
         {
-            "name": "clang-coverage-vcpkg",
-            "configurePreset": "clang-coverage-vcpkg"
-        },
-        {
-            "name": "clang-cl-coverage-vcpkg",
-            "configurePreset": "clang-cl-coverage-vcpkg"
-        },
-        {
-            "name": "gnu-coverage-vcpkg",
-            "configurePreset": "gnu-coverage-vcpkg"
-        },
-        {
-            "name": "clang-conan",
-            "configurePreset": "clang-conan"
+            "name": "windows-static-release",
+            "displayName": "Windwos Static Release",
+            "configurePreset": "windows-static-release"
         }
     ],
     "testPresets": [
@@ -214,25 +141,8 @@
                 "_app-test",
                 "_library-test"
             ]
-        },
-        {
-            "name": "clang-coverage-vcpkg",
-            "configurePreset": "clang-coverage-vcpkg",
-            "inherits": [
-                "_default",
-                "_app-test",
-                "_library-test"
-            ]
-        },
-        {
-            "name": "gnu-coverage-vcpkg",
-            "configurePreset": "gnu-coverage-vcpkg",
-            "inherits": [
-                "_default",
-                "_app-test",
-                "_library-test"
-            ]
         }
+
     ],
     "packagePresets": [
         {

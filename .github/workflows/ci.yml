@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Greeter-Development-${{ matrix.os }}
-          path: build/Greeter-*-Development.zip
+          path: build/realese/Greeter-*-Development.zip
 
       - name: Package Application
         if: matrix.os == 'windows-latest'
@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Greeter-Installer-${{ matrix.os }}
-          path: build/Greeter-*.msi
+          path: build/realese/Greeter-*.msi
