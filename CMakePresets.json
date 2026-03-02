@@ -101,43 +101,6 @@
                 "_realese",
                 "_vcpkg"
             ]
-        },
-        {
-            "name": "clang-coverage-vcpkg",
-            "displayName": "Clang Coverage Vcpkg",
-            "description": "Compiler: clang | build type: Coverage | package: vcpkg",
-            "inherits": [
-                "_clang",
-                "_coverage",
-                "_vcpkg"
-            ]
-        },
-        {
-            "name": "clang-cl-coverage-vcpkg",
-            "displayName": "Clang-cl Coverage Vcpkg",
-            "description": "Compiler: clang-cl | build type: Coverage | package: vcpkg",
-            "inherits": [
-                "_clang-cl",
-                "_coverage",
-                "_vcpkg"
-            ]
-        },
-        {
-            "name": "gnu-coverage-vcpkg",
-            "displayName": "Gnu Coverage Vcpkg",
-            "description": "Compiler: gnu | build type: Coverage | package: vcpkg",
-            "inherits": [
-                "_gnu",
-                "_coverage",
-                "_vcpkg"
-            ]
-        },
-        {
-            "name": "clang-conan",
-            "inherits": [
-                "_clang",
-                "_conan"
-            ]
         }
     ],
     "buildPresets": [
@@ -150,22 +113,6 @@
             "name": "clang-realese-vcpkg",
             "displayName": "Clang Realese Vcpkg",
             "configurePreset": "clang-realese-vcpkg"
-        },
-        {
-            "name": "clang-coverage-vcpkg",
-            "configurePreset": "clang-coverage-vcpkg"
-        },
-        {
-            "name": "clang-cl-coverage-vcpkg",
-            "configurePreset": "clang-cl-coverage-vcpkg"
-        },
-        {
-            "name": "gnu-coverage-vcpkg",
-            "configurePreset": "gnu-coverage-vcpkg"
-        },
-        {
-            "name": "clang-conan",
-            "configurePreset": "clang-conan"
         }
     ],
     "testPresets": [
@@ -214,25 +161,8 @@
                 "_app-test",
                 "_library-test"
             ]
-        },
-        {
-            "name": "clang-coverage-vcpkg",
-            "configurePreset": "clang-coverage-vcpkg",
-            "inherits": [
-                "_default",
-                "_app-test",
-                "_library-test"
-            ]
-        },
-        {
-            "name": "gnu-coverage-vcpkg",
-            "configurePreset": "gnu-coverage-vcpkg",
-            "inherits": [
-                "_default",
-                "_app-test",
-                "_library-test"
-            ]
         }
+
     ],
     "packagePresets": [
         {
